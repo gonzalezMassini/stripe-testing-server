@@ -36,13 +36,13 @@ app.post("/create-checkout-session", async (req, res) => {
           quantity: item.quantity,
         }
       }),
-      success_url: `${process.env.CLIENT_URL}/success.html`,
-      cancel_url: `${process.env.CLIENT_URL}/cancel.html`,
+      success_url: `${process.env.CLIENT_URL}`,
+      cancel_url: `${process.env.CLIENT_URL}`,
     })
     res.json({ url: session.url })
   } catch (e) {
     res.status(500).json({ error: e.message })
   }
 })
-
-app.listen(process.env.PORT, ()=> console.log(`running port 5000`))
+const PORT = process.env.PORT 
+app.listen(PORT, ()=> console.log(`running port 5000`))
