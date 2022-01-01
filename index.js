@@ -4,11 +4,7 @@ const express = require("express")
 const app = express()
 const cors = require("cors")
 app.use(express.json())
-app.use(
-  cors({
-    origin: "https://stripe-test-client.herokuapp.com/",
-  })
-)
+app.use(cors())
 
 const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY)
 
