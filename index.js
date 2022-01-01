@@ -45,4 +45,4 @@ app.post("/create-checkout-session", async (req, res) => {
   }
 })
 const PORT = process.env.PORT 
-app.listen(PORT, ()=> console.log(`running port 5000`))
+app.listen(PORT, ()=> console.log(`running port ${PORT}`))
