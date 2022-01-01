@@ -6,7 +6,7 @@ const cors = require("cors")
 app.use(express.json())
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://stripe-test-client.herokuapp.com/",
   })
 )
 
@@ -16,6 +16,11 @@ const storeItems = new Map([
   [1, { priceInCents: 500, name: "mentor program" }],
   [2, { priceInCents: 2000, name: "course" }],
 ])
+
+
+app.get('/',(req, res)=>{
+  res.send("hello stripe")
+})
 
 app.post("/create-checkout-session", async (req, res) => {
   try {
